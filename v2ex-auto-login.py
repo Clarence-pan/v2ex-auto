@@ -9,7 +9,7 @@ import requests
 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 
-V2EX_BASE_URL = 'http://www.v2ex.com'
+V2EX_BASE_URL = 'https://www.v2ex.com'
 ACCOUNTS_FILE = './.accounts'
 LOG_FILE = '/var/log/v2ex.log'
 
@@ -29,9 +29,9 @@ class V2EX:
     """
 
     def __init__(self, username, password):
-        self.signin_url = "http://www.v2ex.com/signin"
-        self.daily_url = "http://www.v2ex.com/mission/daily"
-        self.v2ex_url = "http://www.v2ex.com"
+        self.signin_url = V2EX_BASE_URL + "/signin"
+        self.daily_url =  V2EX_BASE_URL + "/mission/daily"
+        self.v2ex_url = V2EX_BASE_URL
         self.user_agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
 
         self.headers = {
