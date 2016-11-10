@@ -137,7 +137,7 @@ class V2EX:
 
 if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.realpath(sys.argv[0])))
-    accounts = [x.split(' ') for x in file('./.accounts') if x.strip() ]
+    accounts = [x.split(' ') for x in file('./.accounts') if x.strip() and x[0] != '#' ]
 
     for username, passwd in accounts:
         logger.info("Run for %s", username)
